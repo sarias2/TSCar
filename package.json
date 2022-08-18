@@ -1,0 +1,29 @@
+{
+    "name": "car-gas-track",
+    "version": "1.0.0",
+    "description": "A gas tracking app to store and check data in order to help catch inconsistencies in the gas consumption in your vehicule",
+    "main": "index.js",
+    "scripts": {
+        "test": "test",
+        "dev": "nodemon index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sarias2/CarTrackerBack.git"
+    },
+    "author": "sarias",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/sarias2/CarTrackerBack/issues"
+    },
+    "homepage": "https://github.com/sarias2/CarTrackerBack#readme",
+    "dependencies": {
+        "cors": "^2.8.5",
+        "dotenv": "^16.0.1",
+        "express": "^4.18.1",
+        "express-validator": "^6.14.1",
+        "jsonwebtoken": "^8.5.1",
+        "mongoose": "^6.3.6",
+        "nodemon": "^2.0.16"
+    }
+}
