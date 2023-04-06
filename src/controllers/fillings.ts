@@ -12,6 +12,16 @@ export const getFillings = async(req: Request, res: Response) => {
     })
 }
 
+export const getSingleFilling = async(req: Request, res: Response) => {
+    const id = req.params.id
+    const filling = await Filling.findById(id);
+
+    res.json({
+        ok: true,
+        filling
+    })
+}
+
 export const storeFilling = async(req: Request, res: Response) => {
 
     const id = new mongoose.Types.ObjectId();
@@ -56,11 +66,11 @@ export const updateFilling = async(req:Request, res: Response) => {
             id
         }
 
-        const updatedFilling = await Filling.findByIdAndUpdate(id, changesFilling, { new: true });
+        const updatedFilling = await Filling.findByIdAndUpdate(id, changesFilling, { new: true, timestamps:false });
 
         res.json({
             ok: true,
-            filling: updateFilling
+            filling: updatedFilling,
         });
 
     } catch (error) {

@@ -1,11 +1,13 @@
 import { Router } from 'express';
 import { check } from 'express-validator';
 
-import { getFillings, deleteFilling, storeFilling, updateFilling } from '../controllers/fillings';
+import { getFillings, deleteFilling, storeFilling, updateFilling, getSingleFilling } from '../controllers/fillings';
 
 const router = Router();
 
 router.get('/', getFillings);
+
+router.get('/:id', getSingleFilling);
 
 router.post('/', check(['km', 'volume'], 'This is a required field').not().isEmpty(), storeFilling);
 

@@ -8,7 +8,12 @@ const FillingSchema = Schema({
     volume: {
         type: Number,
         required: true
+    },
+    date: {
+        type: Date,
+        required: true
     }
-}, { timestamps: true });
+},  
+{ timestamps: false});
 
 module.exports = model('Filling', FillingSchema);
